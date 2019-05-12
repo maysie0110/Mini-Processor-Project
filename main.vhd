@@ -25,10 +25,6 @@ architecture rtl of main is
 component Decoder is 
 	port(
 		instruction : in std_logic_vector (15 downto 0);
-	--	upd	 		: in std_logic; -- update destination register
-	--	exe	 		: in std_logic; -- execute the operation
-	--	exe_out 		: out std_logic;
-	--	upd_out		: out std_logic;
 		desReg		: out std_logic;
 		chosenInstr : out std_logic_vector(3 downto 0);
 		isSub			: out std_logic;
@@ -235,15 +231,12 @@ begin
 		
 		-- answers passed through a multiplexor to determine the instruction
 		multiplexor: mux port map (chosenInstrM, addSubAns, subAns, isConstM, constAddAns, subConstAns, andAns, movAns, negAns, eorAns, shlAns, shrAns, finalAns);
-		
-		
 		regE: registerEnabler port map(wRegM, (not upd), enableAL_M, enableBL_M);
 		
 		-- temp register to store the value and passes it to R0 or R1 when necessary
 		temp: reg port map (finalAns, (not exe), tempOut);
 		r0: reg port map (tempOut, enableAL_M, r0_outM);
 		r1: reg port map (tempOut, enableBL_M, r1_outM);
-		
 
 		displayReg: regMux port map (r0_outM, r1_outM, wRegM, displayRegv);
 		displ: display port map (displayRegv, out1, out2);
@@ -259,10 +252,6 @@ use ieee.numeric_std.all;
 entity Decoder is 
 	port(
 		instruction : in std_logic_vector (15 downto 0);
-	--	upd	 		: in std_logic; -- update destination register
-	--	exe	 		: in std_logic; -- execute the operation
-	--	exe_out 		: out std_logic;
-	--	upd_out		: out std_logic;
 		desReg		: out std_logic;
 		chosenInstr : out std_logic_vector(3 downto 0);
 		isSub			: out std_logic;
@@ -352,21 +341,7 @@ begin
 		end if;
 		
 	end process;
-	
---	process(upd, exe) is
---	begin
---	
---		if(upd = '0' and exe = '0') then -- both clock cannot be ON, -> set both to OFF
---			updd <= '1'; 
---			exed <= '1'; 
---		else 
---			updd <= upd;
---			exed <= exe;
---		end if;
---	end process;
---	
---	exe_out <= exed;
---	upd_out <= updd;
+
 	desReg <= rd; -- destination register
 	chosenInstr <= instrC; -- chosen instruction
 end rtl;

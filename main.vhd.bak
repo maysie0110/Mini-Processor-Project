@@ -1,0 +1,16 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity main is
+	port(
+	
+		upd, exe: in std_logic; -- 2 clocks
+		instruction : in std_logic_vector(15 downto 0);
+		out1: out std_logic_vector(6 downto 0); 
+		out2: out std_logic_vector (6 downto 0)
+	);
+);
+end entity;
+	

@@ -1,0 +1,1333 @@
+|main
+upd => registerEnabler:regE.upd
+exe => reg:temp.enable
+instruction[0] => Decoder:D.instruction[0]
+instruction[0] => mov:a.num[0]
+instruction[0] => regMux:wReg3.s
+instruction[1] => Decoder:D.instruction[1]
+instruction[1] => mov:a.num[1]
+instruction[2] => Decoder:D.instruction[2]
+instruction[2] => mov:a.num[2]
+instruction[3] => Decoder:D.instruction[3]
+instruction[3] => mov:a.num[3]
+instruction[3] => regMux:wReg2.s
+instruction[3] => regMux:wRegPass.s
+instruction[4] => Decoder:D.instruction[4]
+instruction[4] => mov:a.num[4]
+instruction[5] => Decoder:D.instruction[5]
+instruction[5] => mov:a.num[5]
+instruction[6] => Decoder:D.instruction[6]
+instruction[6] => mov:a.num[6]
+instruction[6] => regMux:wReg1.s
+instruction[6] => getConst:const.a[0]
+instruction[7] => Decoder:D.instruction[7]
+instruction[7] => mov:a.num[7]
+instruction[7] => getConst:const.a[1]
+instruction[8] => Decoder:D.instruction[8]
+instruction[8] => getConst:const.a[2]
+instruction[9] => Decoder:D.instruction[9]
+instruction[10] => Decoder:D.instruction[10]
+instruction[11] => Decoder:D.instruction[11]
+instruction[12] => Decoder:D.instruction[12]
+instruction[13] => Decoder:D.instruction[13]
+instruction[14] => Decoder:D.instruction[14]
+instruction[15] => Decoder:D.instruction[15]
+out1[0] <= display:displ.a_seg[0]
+out1[1] <= display:displ.a_seg[1]
+out1[2] <= display:displ.a_seg[2]
+out1[3] <= display:displ.a_seg[3]
+out1[4] <= display:displ.a_seg[4]
+out1[5] <= display:displ.a_seg[5]
+out1[6] <= display:displ.a_seg[6]
+out2[0] <= display:displ.b_seg[0]
+out2[1] <= display:displ.b_seg[1]
+out2[2] <= display:displ.b_seg[2]
+out2[3] <= display:displ.b_seg[3]
+out2[4] <= display:displ.b_seg[4]
+out2[5] <= display:displ.b_seg[5]
+out2[6] <= display:displ.b_seg[6]
+
+
+|main|Decoder:D
+instruction[0] => reg[0].DATAA
+instruction[1] => reg[1].DATAA
+instruction[2] => reg[2].DATAA
+instruction[3] => ~NO_FANOUT~
+instruction[4] => ~NO_FANOUT~
+instruction[5] => ~NO_FANOUT~
+instruction[6] => Equal4.IN8
+instruction[6] => Equal6.IN9
+instruction[6] => Equal7.IN9
+instruction[6] => Equal8.IN9
+instruction[6] => Equal9.IN9
+instruction[7] => Equal4.IN7
+instruction[7] => Equal6.IN6
+instruction[7] => Equal7.IN7
+instruction[7] => Equal8.IN8
+instruction[7] => Equal9.IN7
+instruction[8] => reg[0].DATAB
+instruction[8] => Equal4.IN6
+instruction[8] => Equal6.IN5
+instruction[8] => Equal7.IN6
+instruction[8] => Equal8.IN7
+instruction[8] => Equal9.IN6
+instruction[9] => reg[1].DATAB
+instruction[9] => Equal2.IN4
+instruction[9] => Equal3.IN3
+instruction[9] => Equal4.IN5
+instruction[9] => Equal6.IN8
+instruction[9] => Equal7.IN5
+instruction[9] => Equal8.IN6
+instruction[9] => Equal9.IN5
+instruction[9] => Equal10.IN6
+instruction[9] => Equal11.IN6
+instruction[10] => reg[2].DATAB
+instruction[10] => Equal2.IN3
+instruction[10] => Equal3.IN6
+instruction[10] => Equal4.IN4
+instruction[10] => Equal6.IN4
+instruction[10] => Equal7.IN4
+instruction[10] => Equal8.IN5
+instruction[10] => Equal9.IN4
+instruction[10] => Equal10.IN3
+instruction[10] => Equal11.IN5
+instruction[11] => Equal2.IN6
+instruction[11] => Equal3.IN5
+instruction[11] => Equal4.IN3
+instruction[11] => Equal5.IN3
+instruction[11] => Equal6.IN3
+instruction[11] => Equal7.IN3
+instruction[11] => Equal8.IN4
+instruction[11] => Equal9.IN8
+instruction[11] => Equal10.IN5
+instruction[11] => Equal11.IN4
+instruction[12] => Equal0.IN2
+instruction[12] => Equal2.IN5
+instruction[12] => Equal3.IN4
+instruction[12] => Equal4.IN2
+instruction[12] => Equal5.IN2
+instruction[12] => Equal6.IN2
+instruction[12] => Equal7.IN2
+instruction[12] => Equal8.IN3
+instruction[12] => Equal9.IN3
+instruction[12] => Equal10.IN4
+instruction[12] => Equal11.IN3
+instruction[13] => Equal0.IN3
+instruction[13] => Equal2.IN2
+instruction[13] => Equal3.IN2
+instruction[13] => Equal4.IN1
+instruction[13] => Equal5.IN4
+instruction[13] => Equal6.IN1
+instruction[13] => Equal7.IN1
+instruction[13] => Equal8.IN2
+instruction[13] => Equal9.IN2
+instruction[13] => Equal10.IN2
+instruction[13] => Equal11.IN2
+instruction[14] => Equal0.IN1
+instruction[14] => Equal2.IN1
+instruction[14] => Equal3.IN1
+instruction[14] => Equal4.IN9
+instruction[14] => Equal5.IN1
+instruction[14] => Equal6.IN7
+instruction[14] => Equal7.IN8
+instruction[14] => Equal8.IN1
+instruction[14] => Equal9.IN1
+instruction[14] => Equal10.IN1
+instruction[14] => Equal11.IN1
+instruction[15] => Equal0.IN0
+instruction[15] => Equal2.IN0
+instruction[15] => Equal3.IN0
+instruction[15] => Equal4.IN0
+instruction[15] => Equal5.IN0
+instruction[15] => Equal6.IN0
+instruction[15] => Equal7.IN0
+instruction[15] => Equal8.IN0
+instruction[15] => Equal9.IN0
+instruction[15] => Equal10.IN0
+instruction[15] => Equal11.IN0
+desReg <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+chosenInstr[0] <= instrC[0].DB_MAX_OUTPUT_PORT_TYPE
+chosenInstr[1] <= instrC[1].DB_MAX_OUTPUT_PORT_TYPE
+chosenInstr[2] <= instrC[2].DB_MAX_OUTPUT_PORT_TYPE
+chosenInstr[3] <= instrC[3].DB_MAX_OUTPUT_PORT_TYPE
+isSub <= isSub$latch.DB_MAX_OUTPUT_PORT_TYPE
+isConst <= isConst$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|mov:a
+num[0] => rd[0].DATAIN
+num[1] => rd[1].DATAIN
+num[2] => rd[2].DATAIN
+num[3] => rd[3].DATAIN
+num[4] => rd[4].DATAIN
+num[5] => rd[5].DATAIN
+num[6] => rd[6].DATAIN
+num[7] => rd[7].DATAIN
+rd[0] <= num[0].DB_MAX_OUTPUT_PORT_TYPE
+rd[1] <= num[1].DB_MAX_OUTPUT_PORT_TYPE
+rd[2] <= num[2].DB_MAX_OUTPUT_PORT_TYPE
+rd[3] <= num[3].DB_MAX_OUTPUT_PORT_TYPE
+rd[4] <= num[4].DB_MAX_OUTPUT_PORT_TYPE
+rd[5] <= num[5].DB_MAX_OUTPUT_PORT_TYPE
+rd[6] <= num[6].DB_MAX_OUTPUT_PORT_TYPE
+rd[7] <= num[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|regMux:wReg1
+r0[0] => currAns.DATAB
+r0[1] => currAns.DATAB
+r0[2] => currAns.DATAB
+r0[3] => currAns.DATAB
+r0[4] => currAns.DATAB
+r0[5] => currAns.DATAB
+r0[6] => currAns.DATAB
+r0[7] => currAns.DATAB
+r1[0] => currAns.DATAA
+r1[1] => currAns.DATAA
+r1[2] => currAns.DATAA
+r1[3] => currAns.DATAA
+r1[4] => currAns.DATAA
+r1[5] => currAns.DATAA
+r1[6] => currAns.DATAA
+r1[7] => currAns.DATAA
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+y[0] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|regMux:wReg2
+r0[0] => currAns.DATAB
+r0[1] => currAns.DATAB
+r0[2] => currAns.DATAB
+r0[3] => currAns.DATAB
+r0[4] => currAns.DATAB
+r0[5] => currAns.DATAB
+r0[6] => currAns.DATAB
+r0[7] => currAns.DATAB
+r1[0] => currAns.DATAA
+r1[1] => currAns.DATAA
+r1[2] => currAns.DATAA
+r1[3] => currAns.DATAA
+r1[4] => currAns.DATAA
+r1[5] => currAns.DATAA
+r1[6] => currAns.DATAA
+r1[7] => currAns.DATAA
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+y[0] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg
+a[0] => oneBitAdder:add0.a
+a[1] => oneBitAdder:add1.a
+a[2] => oneBitAdder:add2.a
+a[3] => oneBitAdder:add3.a
+a[4] => oneBitAdder:add4.a
+a[5] => oneBitAdder:add5.a
+a[6] => oneBitAdder:add6.a
+a[7] => oneBitAdder:add7.a
+b[0] => oneBitAdder:add0.b
+b[1] => oneBitAdder:add1.b
+b[2] => oneBitAdder:add2.b
+b[3] => oneBitAdder:add3.b
+b[4] => oneBitAdder:add4.b
+b[5] => oneBitAdder:add5.b
+b[6] => oneBitAdder:add6.b
+b[7] => oneBitAdder:add7.b
+isSub => ~NO_FANOUT~
+sum[0] <= oneBitAdder:add0.sum
+sum[1] <= oneBitAdder:add1.sum
+sum[2] <= oneBitAdder:add2.sum
+sum[3] <= oneBitAdder:add3.sum
+sum[4] <= oneBitAdder:add4.sum
+sum[5] <= oneBitAdder:add5.sum
+sum[6] <= oneBitAdder:add6.sum
+sum[7] <= oneBitAdder:add7.sum
+
+
+|main|add:addReg|oneBitAdder:add0
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add1
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add2
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add3
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add4
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add5
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add6
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addReg|oneBitAdder:add7
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub
+a[0] => oneBitAdder:add0.a
+a[1] => oneBitAdder:add1.a
+a[2] => oneBitAdder:add2.a
+a[3] => oneBitAdder:add3.a
+a[4] => oneBitAdder:add4.a
+a[5] => oneBitAdder:add5.a
+a[6] => oneBitAdder:add6.a
+a[7] => oneBitAdder:add7.a
+b[0] => oneBitAdder:add0.b
+b[1] => oneBitAdder:add1.b
+b[2] => oneBitAdder:add2.b
+b[3] => oneBitAdder:add3.b
+b[4] => oneBitAdder:add4.b
+b[5] => oneBitAdder:add5.b
+b[6] => oneBitAdder:add6.b
+b[7] => oneBitAdder:add7.b
+isSub => ~NO_FANOUT~
+sum[0] <= oneBitAdder:add0.sum
+sum[1] <= oneBitAdder:add1.sum
+sum[2] <= oneBitAdder:add2.sum
+sum[3] <= oneBitAdder:add3.sum
+sum[4] <= oneBitAdder:add4.sum
+sum[5] <= oneBitAdder:add5.sum
+sum[6] <= oneBitAdder:add6.sum
+sum[7] <= oneBitAdder:add7.sum
+
+
+|main|subtract:sub|oneBitAdder:add0
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add1
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add2
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add3
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add4
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add5
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add6
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:sub|oneBitAdder:add7
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|getConst:const
+a[0] => new_val[0]$latch.DATAIN
+a[1] => new_val[1]$latch.DATAIN
+a[2] => new_val[2]$latch.DATAIN
+isConst => new_val[0]$latch.LATCH_ENABLE
+isConst => new_val[1]$latch.LATCH_ENABLE
+isConst => new_val[2]$latch.LATCH_ENABLE
+new_val[0] <= new_val[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+new_val[1] <= new_val[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+new_val[2] <= new_val[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+new_val[3] <= <GND>
+new_val[4] <= <GND>
+new_val[5] <= <GND>
+new_val[6] <= <GND>
+new_val[7] <= <GND>
+
+
+|main|add:addConst
+a[0] => oneBitAdder:add0.a
+a[1] => oneBitAdder:add1.a
+a[2] => oneBitAdder:add2.a
+a[3] => oneBitAdder:add3.a
+a[4] => oneBitAdder:add4.a
+a[5] => oneBitAdder:add5.a
+a[6] => oneBitAdder:add6.a
+a[7] => oneBitAdder:add7.a
+b[0] => oneBitAdder:add0.b
+b[1] => oneBitAdder:add1.b
+b[2] => oneBitAdder:add2.b
+b[3] => oneBitAdder:add3.b
+b[4] => oneBitAdder:add4.b
+b[5] => oneBitAdder:add5.b
+b[6] => oneBitAdder:add6.b
+b[7] => oneBitAdder:add7.b
+isSub => ~NO_FANOUT~
+sum[0] <= oneBitAdder:add0.sum
+sum[1] <= oneBitAdder:add1.sum
+sum[2] <= oneBitAdder:add2.sum
+sum[3] <= oneBitAdder:add3.sum
+sum[4] <= oneBitAdder:add4.sum
+sum[5] <= oneBitAdder:add5.sum
+sum[6] <= oneBitAdder:add6.sum
+sum[7] <= oneBitAdder:add7.sum
+
+
+|main|add:addConst|oneBitAdder:add0
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add1
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add2
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add3
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add4
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add5
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add6
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|add:addConst|oneBitAdder:add7
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst
+a[0] => oneBitAdder:add0.a
+a[1] => oneBitAdder:add1.a
+a[2] => oneBitAdder:add2.a
+a[3] => oneBitAdder:add3.a
+a[4] => oneBitAdder:add4.a
+a[5] => oneBitAdder:add5.a
+a[6] => oneBitAdder:add6.a
+a[7] => oneBitAdder:add7.a
+b[0] => oneBitAdder:add0.b
+b[1] => oneBitAdder:add1.b
+b[2] => oneBitAdder:add2.b
+b[3] => oneBitAdder:add3.b
+b[4] => oneBitAdder:add4.b
+b[5] => oneBitAdder:add5.b
+b[6] => oneBitAdder:add6.b
+b[7] => oneBitAdder:add7.b
+isSub => ~NO_FANOUT~
+sum[0] <= oneBitAdder:add0.sum
+sum[1] <= oneBitAdder:add1.sum
+sum[2] <= oneBitAdder:add2.sum
+sum[3] <= oneBitAdder:add3.sum
+sum[4] <= oneBitAdder:add4.sum
+sum[5] <= oneBitAdder:add5.sum
+sum[6] <= oneBitAdder:add6.sum
+sum[7] <= oneBitAdder:add7.sum
+
+
+|main|subtract:subConst|oneBitAdder:add0
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add1
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add2
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add3
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add4
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add5
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add6
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|subtract:subConst|oneBitAdder:add7
+a => sum.IN0
+a => carry_out.IN0
+a => carry_out.IN0
+b => sum.IN1
+b => carry_out.IN1
+b => carry_out.IN0
+carry_in => sum.IN1
+carry_in => carry_out.IN1
+carry_in => carry_out.IN1
+carry_out <= carry_out.DB_MAX_OUTPUT_PORT_TYPE
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|regMux:wReg3
+r0[0] => currAns.DATAB
+r0[1] => currAns.DATAB
+r0[2] => currAns.DATAB
+r0[3] => currAns.DATAB
+r0[4] => currAns.DATAB
+r0[5] => currAns.DATAB
+r0[6] => currAns.DATAB
+r0[7] => currAns.DATAB
+r1[0] => currAns.DATAA
+r1[1] => currAns.DATAA
+r1[2] => currAns.DATAA
+r1[3] => currAns.DATAA
+r1[4] => currAns.DATAA
+r1[5] => currAns.DATAA
+r1[6] => currAns.DATAA
+r1[7] => currAns.DATAA
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+y[0] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|eor:xorReg
+r0[0] => rd.IN0
+r0[1] => rd.IN0
+r0[2] => rd.IN0
+r0[3] => rd.IN0
+r0[4] => rd.IN0
+r0[5] => rd.IN0
+r0[6] => rd.IN0
+r0[7] => rd.IN0
+r1[0] => rd.IN1
+r1[1] => rd.IN1
+r1[2] => rd.IN1
+r1[3] => rd.IN1
+r1[4] => rd.IN1
+r1[5] => rd.IN1
+r1[6] => rd.IN1
+r1[7] => rd.IN1
+rd[0] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[1] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[2] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[3] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[4] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[5] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[6] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[7] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|andReg:andRegister
+r0[0] => rd.IN0
+r0[1] => rd.IN0
+r0[2] => rd.IN0
+r0[3] => rd.IN0
+r0[4] => rd.IN0
+r0[5] => rd.IN0
+r0[6] => rd.IN0
+r0[7] => rd.IN0
+r1[0] => rd.IN1
+r1[1] => rd.IN1
+r1[2] => rd.IN1
+r1[3] => rd.IN1
+r1[4] => rd.IN1
+r1[5] => rd.IN1
+r1[6] => rd.IN1
+r1[7] => rd.IN1
+rd[0] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[1] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[2] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[3] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[4] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[5] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[6] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+rd[7] <= rd.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|regMux:wRegPass
+r0[0] => currAns.DATAB
+r0[1] => currAns.DATAB
+r0[2] => currAns.DATAB
+r0[3] => currAns.DATAB
+r0[4] => currAns.DATAB
+r0[5] => currAns.DATAB
+r0[6] => currAns.DATAB
+r0[7] => currAns.DATAB
+r1[0] => currAns.DATAA
+r1[1] => currAns.DATAA
+r1[2] => currAns.DATAA
+r1[3] => currAns.DATAA
+r1[4] => currAns.DATAA
+r1[5] => currAns.DATAA
+r1[6] => currAns.DATAA
+r1[7] => currAns.DATAA
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+y[0] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|neg:negate
+rs[0] => rd[0].DATAIN
+rs[1] => rd[1].DATAIN
+rs[2] => rd[2].DATAIN
+rs[3] => rd[3].DATAIN
+rs[4] => rd[4].DATAIN
+rs[5] => rd[5].DATAIN
+rs[6] => rd[6].DATAIN
+rs[7] => rd[7].DATAIN
+rd[0] <= rs[0].DB_MAX_OUTPUT_PORT_TYPE
+rd[1] <= rs[1].DB_MAX_OUTPUT_PORT_TYPE
+rd[2] <= rs[2].DB_MAX_OUTPUT_PORT_TYPE
+rd[3] <= rs[3].DB_MAX_OUTPUT_PORT_TYPE
+rd[4] <= rs[4].DB_MAX_OUTPUT_PORT_TYPE
+rd[5] <= rs[5].DB_MAX_OUTPUT_PORT_TYPE
+rd[6] <= rs[6].DB_MAX_OUTPUT_PORT_TYPE
+rd[7] <= rs[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|lsl:shl
+rs[0] => rd[1].DATAIN
+rs[1] => rd[2].DATAIN
+rs[2] => rd[3].DATAIN
+rs[3] => rd[4].DATAIN
+rs[4] => rd[5].DATAIN
+rs[5] => rd[6].DATAIN
+rs[6] => rd[7].DATAIN
+rs[7] => ~NO_FANOUT~
+rd[0] <= <GND>
+rd[1] <= rs[0].DB_MAX_OUTPUT_PORT_TYPE
+rd[2] <= rs[1].DB_MAX_OUTPUT_PORT_TYPE
+rd[3] <= rs[2].DB_MAX_OUTPUT_PORT_TYPE
+rd[4] <= rs[3].DB_MAX_OUTPUT_PORT_TYPE
+rd[5] <= rs[4].DB_MAX_OUTPUT_PORT_TYPE
+rd[6] <= rs[5].DB_MAX_OUTPUT_PORT_TYPE
+rd[7] <= rs[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|lsr:shr
+rs[0] => ~NO_FANOUT~
+rs[1] => rd[0].DATAIN
+rs[2] => rd[1].DATAIN
+rs[3] => rd[2].DATAIN
+rs[4] => rd[3].DATAIN
+rs[5] => rd[4].DATAIN
+rs[6] => rd[5].DATAIN
+rs[7] => rd[6].DATAIN
+rd[0] <= rs[1].DB_MAX_OUTPUT_PORT_TYPE
+rd[1] <= rs[2].DB_MAX_OUTPUT_PORT_TYPE
+rd[2] <= rs[3].DB_MAX_OUTPUT_PORT_TYPE
+rd[3] <= rs[4].DB_MAX_OUTPUT_PORT_TYPE
+rd[4] <= rs[5].DB_MAX_OUTPUT_PORT_TYPE
+rd[5] <= rs[6].DB_MAX_OUTPUT_PORT_TYPE
+rd[6] <= rs[7].DB_MAX_OUTPUT_PORT_TYPE
+rd[7] <= <GND>
+
+
+|main|mux:multiplexor
+instr[0] => Equal0.IN3
+instr[0] => Equal1.IN3
+instr[0] => Equal2.IN3
+instr[0] => Equal3.IN2
+instr[0] => Equal4.IN3
+instr[0] => Equal5.IN2
+instr[0] => Equal6.IN3
+instr[0] => Equal7.IN2
+instr[0] => Equal8.IN3
+instr[0] => Equal9.IN1
+instr[1] => Equal0.IN2
+instr[1] => Equal1.IN1
+instr[1] => Equal2.IN2
+instr[1] => Equal3.IN1
+instr[1] => Equal4.IN2
+instr[1] => Equal5.IN3
+instr[1] => Equal6.IN2
+instr[1] => Equal7.IN1
+instr[1] => Equal8.IN1
+instr[1] => Equal9.IN3
+instr[2] => Equal0.IN1
+instr[2] => Equal1.IN0
+instr[2] => Equal2.IN1
+instr[2] => Equal3.IN0
+instr[2] => Equal4.IN1
+instr[2] => Equal5.IN1
+instr[2] => Equal6.IN1
+instr[2] => Equal7.IN3
+instr[2] => Equal8.IN2
+instr[2] => Equal9.IN2
+instr[3] => Equal0.IN0
+instr[3] => Equal1.IN2
+instr[3] => Equal2.IN0
+instr[3] => Equal3.IN3
+instr[3] => Equal4.IN0
+instr[3] => Equal5.IN0
+instr[3] => Equal6.IN0
+instr[3] => Equal7.IN0
+instr[3] => Equal8.IN0
+instr[3] => Equal9.IN0
+addorsub[0] => currAns[0].DATAB
+addorsub[1] => currAns[1].DATAB
+addorsub[2] => currAns[2].DATAB
+addorsub[3] => currAns[3].DATAB
+addorsub[4] => currAns[4].DATAB
+addorsub[5] => currAns[5].DATAB
+addorsub[6] => currAns[6].DATAB
+addorsub[7] => currAns[7].DATAB
+sub[0] => currAns[0].DATAB
+sub[1] => currAns[1].DATAB
+sub[2] => currAns[2].DATAB
+sub[3] => currAns[3].DATAB
+sub[4] => currAns[4].DATAB
+sub[5] => currAns[5].DATAB
+sub[6] => currAns[6].DATAB
+sub[7] => currAns[7].DATAB
+isConst => ~NO_FANOUT~
+addConst[0] => currAns[0].DATAB
+addConst[1] => currAns[1].DATAB
+addConst[2] => currAns[2].DATAB
+addConst[3] => currAns[3].DATAB
+addConst[4] => currAns[4].DATAB
+addConst[5] => currAns[5].DATAB
+addConst[6] => currAns[6].DATAB
+addConst[7] => currAns[7].DATAB
+subConst[0] => currAns[0].DATAB
+subConst[1] => currAns[1].DATAB
+subConst[2] => currAns[2].DATAB
+subConst[3] => currAns[3].DATAB
+subConst[4] => currAns[4].DATAB
+subConst[5] => currAns[5].DATAB
+subConst[6] => currAns[6].DATAB
+subConst[7] => currAns[7].DATAB
+xand[0] => currAns[0].DATAB
+xand[1] => currAns[1].DATAB
+xand[2] => currAns[2].DATAB
+xand[3] => currAns[3].DATAB
+xand[4] => currAns[4].DATAB
+xand[5] => currAns[5].DATAB
+xand[6] => currAns[6].DATAB
+xand[7] => currAns[7].DATAB
+mov[0] => currAns[0].DATAB
+mov[1] => currAns[1].DATAB
+mov[2] => currAns[2].DATAB
+mov[3] => currAns[3].DATAB
+mov[4] => currAns[4].DATAB
+mov[5] => currAns[5].DATAB
+mov[6] => currAns[6].DATAB
+mov[7] => currAns[7].DATAB
+neg[0] => currAns[0].DATAB
+neg[1] => currAns[1].DATAB
+neg[2] => currAns[2].DATAB
+neg[3] => currAns[3].DATAB
+neg[4] => currAns[4].DATAB
+neg[5] => currAns[5].DATAB
+neg[6] => currAns[6].DATAB
+neg[7] => currAns[7].DATAB
+Eor[0] => currAns[0].DATAB
+Eor[1] => currAns[1].DATAB
+Eor[2] => currAns[2].DATAB
+Eor[3] => currAns[3].DATAB
+Eor[4] => currAns[4].DATAB
+Eor[5] => currAns[5].DATAB
+Eor[6] => currAns[6].DATAB
+Eor[7] => currAns[7].DATAB
+shl[0] => currAns[0].DATAB
+shl[1] => currAns[1].DATAB
+shl[2] => currAns[2].DATAB
+shl[3] => currAns[3].DATAB
+shl[4] => currAns[4].DATAB
+shl[5] => currAns[5].DATAB
+shl[6] => currAns[6].DATAB
+shl[7] => currAns[7].DATAB
+shr[0] => currAns[0].DATAA
+shr[1] => currAns[1].DATAA
+shr[2] => currAns[2].DATAA
+shr[3] => currAns[3].DATAA
+shr[4] => currAns[4].DATAA
+shr[5] => currAns[5].DATAA
+shr[6] => currAns[6].DATAA
+shr[7] => currAns[7].DATAA
+to_reg[0] <= currAns[0].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[1] <= currAns[1].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[2] <= currAns[2].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[3] <= currAns[3].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[4] <= currAns[4].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[5] <= currAns[5].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[6] <= currAns[6].DB_MAX_OUTPUT_PORT_TYPE
+to_reg[7] <= currAns[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|registerEnabler:regE
+desReg => setB.DATAIN
+desReg => setA.DATAIN
+upd => setB.ACLR
+upd => setA.ACLR
+enableR0 <= setA.DB_MAX_OUTPUT_PORT_TYPE
+enableR1 <= setB.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg:temp
+rin[0] => rout[0]~reg0.DATAIN
+rin[1] => rout[1]~reg0.DATAIN
+rin[2] => rout[2]~reg0.DATAIN
+rin[3] => rout[3]~reg0.DATAIN
+rin[4] => rout[4]~reg0.DATAIN
+rin[5] => rout[5]~reg0.DATAIN
+rin[6] => rout[6]~reg0.DATAIN
+rin[7] => rout[7]~reg0.DATAIN
+enable => rout[0]~reg0.CLK
+enable => rout[1]~reg0.CLK
+enable => rout[2]~reg0.CLK
+enable => rout[3]~reg0.CLK
+enable => rout[4]~reg0.CLK
+enable => rout[5]~reg0.CLK
+enable => rout[6]~reg0.CLK
+enable => rout[7]~reg0.CLK
+rout[0] <= rout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[1] <= rout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[2] <= rout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[3] <= rout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[4] <= rout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[5] <= rout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[6] <= rout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[7] <= rout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg:r0
+rin[0] => rout[0]~reg0.DATAIN
+rin[1] => rout[1]~reg0.DATAIN
+rin[2] => rout[2]~reg0.DATAIN
+rin[3] => rout[3]~reg0.DATAIN
+rin[4] => rout[4]~reg0.DATAIN
+rin[5] => rout[5]~reg0.DATAIN
+rin[6] => rout[6]~reg0.DATAIN
+rin[7] => rout[7]~reg0.DATAIN
+enable => rout[0]~reg0.CLK
+enable => rout[1]~reg0.CLK
+enable => rout[2]~reg0.CLK
+enable => rout[3]~reg0.CLK
+enable => rout[4]~reg0.CLK
+enable => rout[5]~reg0.CLK
+enable => rout[6]~reg0.CLK
+enable => rout[7]~reg0.CLK
+rout[0] <= rout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[1] <= rout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[2] <= rout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[3] <= rout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[4] <= rout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[5] <= rout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[6] <= rout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[7] <= rout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|reg:r1
+rin[0] => rout[0]~reg0.DATAIN
+rin[1] => rout[1]~reg0.DATAIN
+rin[2] => rout[2]~reg0.DATAIN
+rin[3] => rout[3]~reg0.DATAIN
+rin[4] => rout[4]~reg0.DATAIN
+rin[5] => rout[5]~reg0.DATAIN
+rin[6] => rout[6]~reg0.DATAIN
+rin[7] => rout[7]~reg0.DATAIN
+enable => rout[0]~reg0.CLK
+enable => rout[1]~reg0.CLK
+enable => rout[2]~reg0.CLK
+enable => rout[3]~reg0.CLK
+enable => rout[4]~reg0.CLK
+enable => rout[5]~reg0.CLK
+enable => rout[6]~reg0.CLK
+enable => rout[7]~reg0.CLK
+rout[0] <= rout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[1] <= rout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[2] <= rout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[3] <= rout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[4] <= rout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[5] <= rout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[6] <= rout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rout[7] <= rout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|regMux:displayReg
+r0[0] => currAns.DATAB
+r0[1] => currAns.DATAB
+r0[2] => currAns.DATAB
+r0[3] => currAns.DATAB
+r0[4] => currAns.DATAB
+r0[5] => currAns.DATAB
+r0[6] => currAns.DATAB
+r0[7] => currAns.DATAB
+r1[0] => currAns.DATAA
+r1[1] => currAns.DATAA
+r1[2] => currAns.DATAA
+r1[3] => currAns.DATAA
+r1[4] => currAns.DATAA
+r1[5] => currAns.DATAA
+r1[6] => currAns.DATAA
+r1[7] => currAns.DATAA
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+s => currAns.OUTPUTSELECT
+y[0] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= currAns.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:displ
+rs[0] => Mux7.IN19
+rs[0] => Mux8.IN19
+rs[0] => Mux9.IN19
+rs[0] => Mux10.IN19
+rs[0] => Mux11.IN19
+rs[0] => Mux12.IN19
+rs[0] => Mux13.IN19
+rs[1] => Mux7.IN18
+rs[1] => Mux8.IN18
+rs[1] => Mux9.IN18
+rs[1] => Mux10.IN18
+rs[1] => Mux11.IN18
+rs[1] => Mux12.IN18
+rs[1] => Mux13.IN18
+rs[2] => Mux7.IN17
+rs[2] => Mux8.IN17
+rs[2] => Mux9.IN17
+rs[2] => Mux10.IN17
+rs[2] => Mux11.IN17
+rs[2] => Mux12.IN17
+rs[2] => Mux13.IN17
+rs[3] => Mux7.IN16
+rs[3] => Mux8.IN16
+rs[3] => Mux9.IN16
+rs[3] => Mux10.IN16
+rs[3] => Mux11.IN16
+rs[3] => Mux12.IN16
+rs[3] => Mux13.IN16
+rs[4] => Mux0.IN19
+rs[4] => Mux1.IN19
+rs[4] => Mux2.IN19
+rs[4] => Mux3.IN19
+rs[4] => Mux4.IN19
+rs[4] => Mux5.IN19
+rs[4] => Mux6.IN19
+rs[5] => Mux0.IN18
+rs[5] => Mux1.IN18
+rs[5] => Mux2.IN18
+rs[5] => Mux3.IN18
+rs[5] => Mux4.IN18
+rs[5] => Mux5.IN18
+rs[5] => Mux6.IN18
+rs[6] => Mux0.IN17
+rs[6] => Mux1.IN17
+rs[6] => Mux2.IN17
+rs[6] => Mux3.IN17
+rs[6] => Mux4.IN17
+rs[6] => Mux5.IN17
+rs[6] => Mux6.IN17
+rs[7] => Mux0.IN16
+rs[7] => Mux1.IN16
+rs[7] => Mux2.IN16
+rs[7] => Mux3.IN16
+rs[7] => Mux4.IN16
+rs[7] => Mux5.IN16
+rs[7] => Mux6.IN16
+a_seg[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+a_seg[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+a_seg[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+a_seg[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+a_seg[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+a_seg[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+a_seg[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[0] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[1] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[2] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[3] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[4] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[5] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+b_seg[6] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\May Trinh\Desktop\Logic Design\Project 1\simulation\qsim
+vmain
+Z1 !s100 4@X`_7m_WiimUKYjJ>>fD0
+Z2 IKDBlJ^QK@9kZTN5>=;C]e1
+Z3 Vm?eG>GczA<hljkfQdYQL<3
+Z4 dC:\Users\May Trinh\Desktop\Logic Design\Project 2\Project 1\simulation\qsim
+Z5 w1556819292
+Z6 8main.vo
+Z7 Fmain.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|main.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1556819293.813000
+Z12 !s107 main.vo|
+!s101 -O0
+vmain_vlg_check_tst
+!i10b 1
+Z13 !s100 3H0OWlRI?Pa^1mI<2a<MM0
+Z14 ICITI]NGaW<7>6]OE<MK_C1
+Z15 V@XVjYRITe6VmLVn3bg>4W1
+R4
+Z16 w1556819291
+Z17 8main.vt
+Z18 Fmain.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1556819293.972000
+Z20 !s107 main.vt|
+Z21 !s90 -work|work|main.vt|
+!s101 -O0
+R10
+vmain_vlg_sample_tst
+!i10b 1
+Z22 !s100 cOf9gIYk<7fCS9;Mg5EY@2
+Z23 ITIoJmSR^e<8A8^@Q<4eV;0
+Z24 VzGYSnLoA:mH`^=>GYnA>V2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vmain_vlg_vec_tst
+!i10b 1
+!s100 K88Kj<38Clk`X0MS5z2mN1
+ILMjkYA127ENS7;QRIl3zQ2
+Z25 VHZma`Q?n[z_A]1=F?<UDB3
+R4
+R16
+R17
+R18
+Z26 L0 397
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

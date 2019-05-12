@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\May Trinh\Desktop\Logic Design\Project 2\Project 1\simulation\modelsim
+Emain
+w1556818563
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\May Trinh\Desktop\Logic Design\Project 2\Project 1\simulation\modelsim
+8C:/Users/May Trinh/Desktop/Logic Design/Project 2/Project 1/main.vhd
+FC:/Users/May Trinh/Desktop/Logic Design/Project 2/Project 1/main.vhd
+l0
+L9
+Ve@P8lPo3jDjgoeiEOb8g73
+!s100 fJQg`zNnWChM34G:VPHH43
+Z5 OV;C;10.1d;51
+31
+!i10b 1
+!s108 1556818597.902000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/May Trinh/Desktop/Logic Design/Project 2/Project 1/main.vhd|
+!s107 C:/Users/May Trinh/Desktop/Logic Design/Project 2/Project 1/main.vhd|
+o-93 -work work -O0
+Z6 tExplicit 1
